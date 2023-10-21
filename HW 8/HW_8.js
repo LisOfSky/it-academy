@@ -93,6 +93,8 @@ exFour(secondArr, dataToInsert, insertFrom);
 // 5. Напишите функцию, которая вставит данные в массив в заданные несколько мест в массиве. 
 // Дан массив [1, 2, 3, 4, 5]. Сделайте из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
 
+//todo Переделать - сделать чередование
+
 const thirdArr = [1, 2, 3, 4, 5];
 const firstDataToInsert = 'Artsiom';
 const secondDataToInsert = 'JS'
