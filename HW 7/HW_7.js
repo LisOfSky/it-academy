@@ -4,7 +4,7 @@
 const arrOne = [1,2,3,-4,5,6];
 
 function exOne(arr) {
-    return console.log('Задание 1. Массив в обратном порядке: ' + '[' + arr.reverse() + ']');
+    console.log('Задание 1. Массив в обратном порядке: ' + '[' + arr.reverse() + ']');
 }
 
 exOne(arrOne);
@@ -17,7 +17,7 @@ exOne(arrOne);
 const arrTwo = [3,67,15,17,324,42,-19,-324.1];
 
 function exTwo(arr) {
-    return console.log('Задание 2. Максимальное число в массиве: ' + Math.max(...arr));
+    console.log('Задание 2. Максимальное число в массиве: ' + Math.max(...arr));
 }
 
 exTwo(arrTwo);
@@ -42,7 +42,7 @@ function exThree(num, lenght) {
         num += 1;
     }
 
-    return console.log('Задание 3. Ряд фибоначи по заданным параметрам: ' + newFib);
+    console.log('Задание 3. Ряд фибоначи по заданным параметрам: ' + newFib);
 }
 
 exThree(numStart, numLenght);
@@ -74,7 +74,7 @@ function exFour(firstNum, secondNum) {
         }
     }  
 
-    return console.log('Задание 4. Количество совпадающих чисел по позиции и значению - ' + sumPos + '; количество совпадающих чисел только по значению - ' + sumAll);
+    console.log('Задание 4. Количество совпадающих чисел по позиции и значению - ' + sumPos + '; количество совпадающих чисел только по значению - ' + sumAll);
 }
 
 exFour(numOne, numTwo);
@@ -87,7 +87,7 @@ exFour(numOne, numTwo);
 const yetAnotherArray = [3,67,15,1,17,324,42,-19,1,324.1];
 
 function exFive(arr) {
-    return console.log('Задание 5. Сортировка массива по возрастанию - [' + arr.sort((a, b) => a - b) + ']. Сортировка массива по убыванию - [' + arr.sort((a, b) => b - a) + ']');
+    console.log('Задание 5. Сортировка массива по возрастанию - [' + arr.sort((a, b) => a - b) + ']. Сортировка массива по убыванию - [' + arr.sort((a, b) => b - a) + ']');
 }
 
 exFive(yetAnotherArray);
@@ -101,7 +101,7 @@ const lastArr = ['a',-15,47,89,42,'b',3,47,'r',18,-15,'a',89,'r'];
 
 function exSix(arr) {
     let newArr = new Set(arr);
-    return console.log('Задание 6. Массив после удаления всех повторяющихся элементов - [' + Array.from(newArr) + ']');
+    console.log('Задание 6. Массив после удаления всех повторяющихся элементов - [' + Array.from(newArr) + ']');
 }
 
 exSix(lastArr);
