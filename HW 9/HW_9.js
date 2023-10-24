@@ -57,7 +57,7 @@ wait();
 // число от 6 до 10. Создайте async функцию, которая с помощью await будет дожидаться результата getNum, затем будет 
 // дожидаться результата getNum, а затем найдет сумму полученных чисел и выводит на экран.
 
-function secondGetNum (num, timeout, min, max) {
+function getNumTwo (num, timeout, min, max) {
     return new Promise(resolve => {
         setTimeout(() => {
             let random = Math.floor(Math.random() * (max - min) + min);
@@ -67,10 +67,10 @@ function secondGetNum (num, timeout, min, max) {
     })
 }
 
-async function newWait () {
-    const firstPromise = await secondGetNum('Первое', 3, 1, 5);
-    const secondPromise = await secondGetNum('Второе', 5, 6, 10);
-    console.log(`Сумма полученных чисел: ${firstPromise + secondPromise}`);
+async function waitTwo () {
+    const promiseOne = await getNumTwo('Первое', 3, 1, 5);
+    const promiseTwo = await getNumTwo('Второе', 5, 6, 10);
+    console.log(`Сумма полученных чисел: ${promiseOne + promiseTwo}`);
 }
 
-newWait();
+waitTwo();
