@@ -5,7 +5,8 @@
 
 
 const {Aviacompany} = require('./aviacompany.js');
-const {PassangerAirplane, CargoAirplane} = require('./airplanes.js');
+const {CargoAirplane} = require('./cargoAirplane.js');
+const {PassangerAirplane} = require('./passangerAirplane.js');
 
 let myAviacompany = new Aviacompany();
 
