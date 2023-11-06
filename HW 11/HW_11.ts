@@ -117,7 +117,7 @@ export function map(mapper: Function, input: any[]): any[] | Function {
         return map;
     }
     if (arguments.length === 1) {
-        return function subFunction(subInput: any[]): any[] | Function {
+        return function subFunction(subInput: any[]): Function | any[] {
             if (arguments.length === 0) {
                 return subFunction;
             }
@@ -144,20 +144,21 @@ export function map(mapper: Function, input: any[]): any[] | Function {
  * @param {Array} input
  * @return {Array | Function}
  */
-// export function filter(filterer, input) {
-//     if (arguments.length === 0) {
-//         return filter;
-//     }
-//     if (arguments.length === 1) {
-//         return function subFunction(subInput) {
-//             if (arguments.length === 0) {
-//                 return subFunction;
-//             }
-//             return subInput.filter(filterer);
-//         };
-//     }
-//     return input.filter(filterer);
-// }
+
+export function filter(filterer: Function, input: any[]): any[] | Function {
+    if (arguments.length === 0) {
+        return filter;
+    }
+    if (arguments.length === 1) {
+        return function subFunction(subInput: any[]): Function | any[] {
+            if (arguments.length === 0) {
+                return subFunction;
+            }
+            return subInput.filter(filterer());
+        };
+    }
+    return input.filter(filterer());
+}
 
 
 /**
@@ -172,20 +173,18 @@ export function map(mapper: Function, input: any[]): any[] | Function {
  * @param {Number} b
  * @return {Number | Function}
  */
-// export function add(a, b) {
-//     if (arguments.length === 0) {
-//         return add;
-//     }
-//     if (arguments.length === 1) {
-//         return function subFunction(subB) {
-//             if (arguments.length === 0) {
-//                 return subFunction;
-//             }
-//             return a + subB;
-//         };
-//     }
-//     return a + b;
-// }
 
-// Следующее воскресенье крайний срок.
-// Крайний срок 12.11
+export function add(a: number, b: number): number | Function {
+    if (arguments.length === 0) {
+        return add;
+    }
+    if (arguments.length === 1) {
+        return function subFunction(subB: number): Function | number {
+            if (arguments.length === 0) {
+                return subFunction;
+            }
+            return a + subB;
+        };
+    }
+    return a + b;
+}
