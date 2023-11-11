@@ -112,12 +112,12 @@ export class ObjectManipulator {
  */
 
 
-export function map(mapper: Function, input: any[]): any[] | Function {
+export function map<T>(mapper: Function, input: T[]): T[] | Function {
     if (arguments.length === 0) {
         return map;
     }
     if (arguments.length === 1) {
-        return function subFunction(subInput: any[]): Function | any[] {
+        return function subFunction(subInput: T[]): Function | T[] {
             if (arguments.length === 0) {
                 return subFunction;
             }
@@ -145,12 +145,12 @@ export function map(mapper: Function, input: any[]): any[] | Function {
  * @return {Array | Function}
  */
 
-export function filter(filterer: Function, input: any[]): any[] | Function {
+export function filter<T>(filterer: Function, input: T[]): T[] | Function {
     if (arguments.length === 0) {
         return filter;
     }
     if (arguments.length === 1) {
-        return function subFunction(subInput: any[]): Function | any[] {
+        return function subFunction(subInput: T[]): Function | T[] {
             if (arguments.length === 0) {
                 return subFunction;
             }
