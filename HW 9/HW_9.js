@@ -43,8 +43,9 @@ function getNum () {
 }
 
 async function wait () {
-    const result = await getNum();
-    console.log(`Асинхронная функция выполнена. Результат возведения в квадрат - ${Math.pow(result, 2)}`);
+    let result = await getNum();
+    result = Math.pow(result, 2);
+    console.log(`Асинхронная функция выполнена. Результат возведения в квадрат - ${result}`);
 }
 
 wait();
