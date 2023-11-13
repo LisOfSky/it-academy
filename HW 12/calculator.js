@@ -49,4 +49,4 @@
     }
   };
   
-  module.exports = Calculator;
+  module.exports = { Calculator };

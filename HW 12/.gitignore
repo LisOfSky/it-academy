@@ -1,0 +1,6 @@
+# dependencies
+/node_modules
+
+# #eslint
+# .eslintrc.js
+# .eslintignore.js
