@@ -1,3 +1,9 @@
+// 1. Файл calculator.js лежит в облаке;
+// 2. Создать проект для автотестов;
+// 3. Выбрать один из пройденных фреймворков: Jamine, Mocha, Jest;
+// 4. Написать максимальное количество юнит тестов для методов класса, каждый тест должен содержать проверку;
+// 5. Установить eslint, настроить правила для статической проверки кода, добавить папки, которые не надо проверять в игнор на проверку.
+
 const { Calculator } = require('./calculator')
 
 const calculator = new Calculator();
@@ -37,17 +43,17 @@ describe('"Add" function:', () => {
     expect(calculator.add(3, 1)).toBeDefined();
   });
 
-  // test('should return NaN if one of the argument = string', () => {
-  //   expect(calculator.add('2', 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument = string', () => {
+    expect(calculator.add('2', 1)).toBeNaN();
+  });
 
   test('should return NaN if one of the argument is Undefined', () => {
     expect(calculator.add(undefined, 1)).toBeNaN();
   });
 
-  // test('should return NaN if one of the argument is boolean', () => {
-  //   expect(calculator.add(true, 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument is boolean', () => {
+    expect(calculator.add(true, 1)).toBeNaN();
+  });
 
   // test('should return NaN if one of the argument is Symbol', () => {
   //   expect(calculator.add(+, 1)).toBeNaN();
@@ -92,17 +98,17 @@ describe('"Multiply" function:', () => {
     expect(calculator.multiply(3, 1)).toBeDefined();
   });
 
-  // test('should return NaN if one of the argument = string', () => {
-  //   expect(calculator.multiply('2', 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument = string', () => {
+    expect(calculator.multiply('2', 1)).toBeNaN();
+  });
 
   test('should return NaN if one of the argument is Undefined', () => {
     expect(calculator.multiply(undefined, 1)).toBeNaN();
   });
 
-  // test('should return NaN if one of the argument is boolean', () => {
-  //   expect(calculator.multiply(true, 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument is boolean', () => {
+    expect(calculator.multiply(true, 1)).toBeNaN();
+  });
 
   // test('should return NaN if one of the argument is Symbol', () => {
   //   expect(calculator.multiply(+, 1)).toBeNaN();
@@ -132,9 +138,9 @@ describe('"Subtraction" function:', () => {
     expect(calculator.subtraction(a, b)).toBeCloseTo(c);
   });
 
-  // test('set of numbers should return subtraction result of values', () => {
-  //   expect(calculator.subtraction(33, 5, 8, 14)).toBe(6);
-  // });
+  test('set of numbers should return subtraction result of values', () => {
+    expect(calculator.subtraction(33, 5, 8, 14)).toBe(6);
+  });
 
   test('should return subtraction result of two big values', () => {
     expect(calculator.subtraction(876543210987654321, 123456789012345678)).toBe(753086421975308500);
@@ -148,17 +154,17 @@ describe('"Subtraction" function:', () => {
     expect(calculator.subtraction(3, 1)).toBeDefined();
   });
 
-  // test('should return NaN if one of the argument = string', () => {
-  //   expect(calculator.subtraction('2', 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument = string', () => {
+    expect(calculator.subtraction('2', 1)).toBeNaN();
+  });
 
   test('should return NaN if one of the argument is Undefined', () => {
     expect(calculator.subtraction(undefined, 1)).toBeNaN();
   });
 
-  // test('should return NaN if one of the argument is boolean', () => {
-  //   expect(calculator.subtraction(true, 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument is boolean', () => {
+    expect(calculator.subtraction(true, 1)).toBeNaN();
+  });
 
   // test('should return NaN if one of the argument is Symbol', () => {
   //   expect(calculator.subtraction(+, 1)).toBeNaN();
@@ -192,9 +198,9 @@ describe('"Divide" function:', () => {
     expect(calculator.divide(4, 0)).toBe(Infinity);
   });
 
-  // test('set of numbers should return division result of values', () => {
-  //   expect(calculator.divide(42, 2, 3)).toBe(7);
-  // });
+  test('set of numbers should return division result of values', () => {
+    expect(calculator.divide(42, 2, 3)).toBe(7);
+  });
 
   test('should return division result of two big values', () => {
     expect(calculator.divide(876543210987654321, 123456789012345678)).toBeCloseTo(7.1);
@@ -208,17 +214,17 @@ describe('"Divide" function:', () => {
     expect(calculator.divide(3, 1)).toBeDefined();
   });
 
-  // test('should return NaN if one of the argument = string', () => {
-  //   expect(calculator.divide('2', 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument = string', () => {
+    expect(calculator.divide('2', 1)).toBeNaN();
+  });
 
   test('should return NaN if one of the argument is Undefined', () => {
     expect(calculator.divide(undefined, 1)).toBeNaN();
   });
 
-  // test('should return NaN if one of the argument is boolean', () => {
-  //   expect(calculator.divide(true, 1)).toBeNaN();
-  // });
+  test('should return NaN if one of the argument is boolean', () => {
+    expect(calculator.divide(true, 1)).toBeNaN();
+  });
 
   // test('should return NaN if one of the argument is Symbol', () => {
   //   expect(calculator.divide(+, 1)).toBeNaN();
@@ -256,17 +262,17 @@ describe('"Exponentiation" function:', () => {
     expect(calculator.exponentiation(3)).toBeDefined();
   });
 
-  // test('should return NaN if one of the argument = string', () => {
-  //   expect(calculator.exponentiation('2')).toBe(NaN);
-  // });
+  test('should return NaN if one of the argument = string', () => {
+    expect(calculator.exponentiation('2')).toBe(NaN);
+  });
 
   test('should return NaN if one of the argument is Undefined', () => {
     expect(calculator.exponentiation(undefined)).toBe(NaN);
   });
 
-  // test('should return NaN if one of the argument is boolean', () => {
-  //   expect(calculator.exponentiation(true)).toBe(NaN);
-  // });
+  test('should return NaN if one of the argument is boolean', () => {
+    expect(calculator.exponentiation(true)).toBe(NaN);
+  });
 
   // test('should return NaN if one of the argument is Symbol', () => {
   //   expect(calculator.exponentiation(+)).toBe(NaN);

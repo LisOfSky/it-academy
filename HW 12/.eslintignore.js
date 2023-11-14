@@ -1,2 +1,3 @@
-task.js
-/node_modules
+coverage
+node_modules
+jest.config.js
