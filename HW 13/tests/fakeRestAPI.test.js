@@ -6,8 +6,8 @@
 const axios = require('axios');
 const Validator = require('jsonschema').Validator;
 const validate = new Validator();
-const getSchema = require('../data/getAPIschema.v1.json')
-const postSchema = require('../data/postAPIschema.v1.json')
+const allUsersSchema = require('../data/allUsersAPIschema.v1.json')
+const oneUserSchema = require('../data/oneUserAPIschema.v1.json')
 const deleteSchema = require('../data/deleteAPIschema.v1.json')
 
 
@@ -23,7 +23,7 @@ describe(`GET-API Users tests`, function() {
         });
 
         test(`should be valid response body`, async () => {
-            const result = validate.validate(response.data, getSchema);
+            const result = validate.validate(response.data, allUsersSchema);
             expect(result.valid).toBe(true);
         });
     });
@@ -45,7 +45,7 @@ describe(`POST-API Users tests`, function() {
         });
 
         test(`should be valid response body`, async () => {
-            const result = validate.validate(response.data, postSchema);
+            const result = validate.validate(response.data, oneUserSchema);
             expect(result.valid).toBe(true);
         });
     });
@@ -87,7 +87,7 @@ describe(`GET-API Users tests with ID param`, function() {
         });
 
         test(`should be valid response body`, async () => {
-            const result = validate.validate(response.data, postSchema);
+            const result = validate.validate(response.data, oneUserSchema);
             expect(result.valid).toBe(true);
         });
     });
@@ -129,7 +129,7 @@ describe(`PUT-API Users tests`, function() {
         });
 
         test(`should be valid response body`, async () => {
-            const result = validate.validate(response.data, postSchema);
+            const result = validate.validate(response.data, oneUserSchema);
             expect(result.valid).toBe(true);
         });
     });
