@@ -6,9 +6,9 @@
 const axios = require('axios');
 const Validator = require('jsonschema').Validator;
 const validate = new Validator();
-const allUsersSchema = require('../data/allUsersAPIschema.v1.json')
-const oneUserSchema = require('../data/oneUserAPIschema.v1.json')
-const deleteSchema = require('../data/deleteAPIschema.v1.json')
+const allUsersSchema = require('../data/allUsersAPIschema.v1.json');
+const oneUserSchema = require('../data/oneUserAPIschema.v1.json');
+const deleteSchema = require('../data/deleteAPIschema.v1.json');
 
 
 describe(`GET-API Users tests`, function() {
