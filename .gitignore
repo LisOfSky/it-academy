@@ -4,3 +4,4 @@
 *coverage
 *jest.config.js
 *mochawesome-report
+*.DS_Store
