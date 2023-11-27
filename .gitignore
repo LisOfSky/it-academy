@@ -3,3 +3,4 @@
 /.vscode
 *coverage
 *jest.config.js
+*mochawesome-report
