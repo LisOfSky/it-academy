@@ -1,4 +1,6 @@
-exports.config = {
+import allureReporter from '@wdio/allure-reporter'
+
+export const config = {
     //
     // ====================
     // Runner Configuration
@@ -22,11 +24,11 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/*.js'
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        //
     ],
     //
     // ============
@@ -65,7 +67,7 @@ exports.config = {
                 'disable-notifications',
             ],
         }
-    }],
+    },],
 
     //
     // ===================
@@ -137,7 +139,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec',
+        ['allure',
+            {
+                outputDir: 'allure-results',
+                disableWebdriverStepsReporting: true,
+                // disableWebdriverScreenshotsReporting: true,
+            }
+        ]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -216,8 +225,10 @@ exports.config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+    beforeTest: function (test, context) {
+        // console.log('test ', test)
+        // console.log('context ', context)
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -242,7 +253,9 @@ exports.config = {
      */
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         if (!passed) {
-            await browser.takeScreenshot();
+            await browser.takeScreenshot()
+            await allureReporter.addAttachment(`Failed test URL - `, await browser.getUrl(),'text/plain')
+            // await allureReporter.addAttachment(`Error - `, error,'text/plain')
         }
     },
 
