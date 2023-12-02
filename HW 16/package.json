@@ -9,7 +9,8 @@
     "@wdio/spec-reporter": "^8.24.0"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "npm run clean && wdio run ./wdio.conf.js",
+    "clean": "rimraf \"allure-results\" \"allure-report\""
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.23.3",
