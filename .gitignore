@@ -3,3 +3,7 @@
 /.vscode
 *coverage
 *jest.config.js
+*mochawesome-report
+*allure-report
+*allure-results
+*.eslintrc.js
