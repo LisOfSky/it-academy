@@ -41,21 +41,20 @@ describe('WebdriverIO website tests/', () => {
       expect(await $('//h1').getText()).to.equal('Selectors');
     })
 
-    it(`should be search for "waitUntil" results found - 43`, async () => {
+    it(`should be search for "Christian Bromann" results found - 3`, async () => {
       await browser.url('https://webdriver.io/');
       const searchButton = await $('//*[@class="DocSearch DocSearch-Button"]');
       await searchButton.click();
       const searchInput = await $('//*[@class="DocSearch-Input"]');
       await searchInput.click();
-      await searchInput.setValue('waitUntil');
+      await searchInput.setValue('Christian Bromann');
       const seeAllResultsButton = await $('//*[@class="DocSearch-HitsFooter"]/*'); 
-      await seeAllResultsButton.waitUntil(async function () {
-        return (await seeAllResultsButton.getText()) === 'See all 13 results'
+      expect(await seeAllResultsButton.waitUntil(async function () {
+        return (await seeAllResultsButton.getText()) === 'See all 3 results'
       }, {
         timeout: 10000,
         timeoutMsg: 'the expected text is not correct'
-      });
-      expect(await seeAllResultsButton.getText()).to.equal('See all 13 results');
+      }));
     })
 });
 
