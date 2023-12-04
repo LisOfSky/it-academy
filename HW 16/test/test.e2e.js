@@ -50,7 +50,7 @@ describe('WebdriverIO website tests/', () => {
       await searchInput.setValue('Christian Bromann');
       const seeAllResultsButton = await $('//*[@class="DocSearch-HitsFooter"]/*'); 
       expect(await seeAllResultsButton.waitUntil(async function () {
-        return (await seeAllResultsButton.getText()) === 'See all 3 results'
+        return (await this.getText()) === 'See all 3 results'
       }, {
         timeout: 10000,
         timeoutMsg: 'the expected text is not correct'
