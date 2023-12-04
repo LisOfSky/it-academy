@@ -54,10 +54,6 @@ describe('"Add" function:', () => {
   test('should return NaN if one of the argument is boolean', () => {
     expect(calculator.add(true, 1)).toBeNaN();
   });
-
-  // test('should return NaN if one of the argument is Symbol', () => {
-  //   expect(calculator.add(+, 1)).toBeNaN();
-  // });
 });
 
 
@@ -109,10 +105,6 @@ describe('"Multiply" function:', () => {
   test('should return NaN if one of the argument is boolean', () => {
     expect(calculator.multiply(true, 1)).toBeNaN();
   });
-
-  // test('should return NaN if one of the argument is Symbol', () => {
-  //   expect(calculator.multiply(+, 1)).toBeNaN();
-  // });
 });
 
 
@@ -165,10 +157,6 @@ describe('"Subtraction" function:', () => {
   test('should return NaN if one of the argument is boolean', () => {
     expect(calculator.subtraction(true, 1)).toBeNaN();
   });
-
-  // test('should return NaN if one of the argument is Symbol', () => {
-  //   expect(calculator.subtraction(+, 1)).toBeNaN();
-  // });
 });
 
 
@@ -225,10 +213,6 @@ describe('"Divide" function:', () => {
   test('should return NaN if one of the argument is boolean', () => {
     expect(calculator.divide(true, 1)).toBeNaN();
   });
-
-  // test('should return NaN if one of the argument is Symbol', () => {
-  //   expect(calculator.divide(+, 1)).toBeNaN();
-  // });
 });
 
 
@@ -273,8 +257,4 @@ describe('"Exponentiation" function:', () => {
   test('should return NaN if one of the argument is boolean', () => {
     expect(calculator.exponentiation(true)).toBe(NaN);
   });
-
-  // test('should return NaN if one of the argument is Symbol', () => {
-  //   expect(calculator.exponentiation(+)).toBe(NaN);
-  // });
 });

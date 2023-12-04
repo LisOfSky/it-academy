@@ -1,7 +1,9 @@
 # dependencies
 /node_modules
 /.vscode
-
-# #eslint
-# .eslintrc.js
-# .eslintignore.js
+*coverage
+*jest.config.js
+*mochawesome-report
+*allure-report
+*allure-results
+*.eslintrc.js
