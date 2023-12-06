@@ -6,7 +6,7 @@ import homePage from '../pageobjects/homePage.js';
 const homePageEnglishTitleText = 'Next-gen browser and mobile automation test framework for Node.js';
 const homePageUkrainianTitleText = 'Тестовий фреймворк наступного покоління для автоматизації браузерів та мобільних пристроїв у Node.js';
 
-describe('WebdriverIO website tests', () => {
+describe('WebdriverIO website language tests', () => {
     it(`should be the English language as a default language`, async () => {
         await homePage.navigate('https://webdriver.io/');
         expect(await homePage.getText(homePage.homePageTitle)).to.equal(homePageEnglishTitleText);
@@ -17,5 +17,4 @@ describe('WebdriverIO website tests', () => {
         await navigationBar.click(navigationBar.ukrainianLanguageSwitchButton);
         expect(await homePage.getText(homePage.homePageTitle)).to.equal(homePageUkrainianTitleText);
     })
-
 });

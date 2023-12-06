@@ -19,23 +19,6 @@ class BaseElements {
         await element.moveTo();
     }
 
-    async searchDoc(element, text) {
-        await element.waitForClickable();
-        await element.click();
-        await element.setValue(text);
-    }
-
-    async searchWithTimeout(element, expectedText) {
-        await element.waitUntil(
-            async function () {
-                return (await this.getText()) === expectedText;
-            }, {
-                timeout: 10000,
-                timeoutMsg: 'the expected text is not correct'
-            }
-        )
-    }
-
 }
   
 export { BaseElements };
