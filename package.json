@@ -4,21 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs-extra": "^11.1.1"
+    "fs-extra": "^11.1.1",
+    "jest": "^29.7.0"
   },
   "devDependencies": {
-    "@wdio/allure-reporter": "^8.24.2",
-    "@wdio/cli": "^8.24.6",
-    "@wdio/local-runner": "^8.24.6",
-    "@wdio/mocha-framework": "^8.24.6",
-    "@wdio/spec-reporter": "^8.24.2",
-    "typescript": "^5.2.2",
-    "wdio-wait-for": "^3.0.9"
+    "eslint": "^8.53.0"
   }
 }
