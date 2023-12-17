@@ -17,8 +17,8 @@ class PricingPage extends Base {
         return cy.get('span.font-bold');
     }
 
-    chooseTestResults (field, val) {
-        field.invoke('val', val).trigger('input').click();
+    chooseNumOfTestResults (val) {
+        this.priceBar.invoke('val', val).trigger('input').click();
     }
 }
 

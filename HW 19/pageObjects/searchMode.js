@@ -17,9 +17,13 @@ class SearchMode extends Base {
         return cy.get('#docsearch-item-0');
     }
 
-    searchDoc (field, text) {
-        field.wait(this.time).click();
+    searchDoc (text) {
+        this.searchModeButton.wait(this.time).click();
         this.searchField.click().type(text);
+    }
+
+    shouldFirstResultContainLink (link) {
+        this.firstSearchResult.contains('a').should('have.attr', 'href', link);
     }
 }
 
