@@ -1,0 +1,8 @@
+# dependencies
+/node_modules
+/coverage
+/test-report.html
+
+# #eslint
+# .eslintrc.js
+# .eslintignore.js
