@@ -2,7 +2,7 @@
 *node_modules
 /.vscode
 *coverage
-*jest.config.js
+jest.config.js
 *mochawesome-report
 *.DS_Store
 *allure-report
