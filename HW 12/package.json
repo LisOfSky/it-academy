@@ -1,0 +1,16 @@
+{
+  "name": "hw-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintignore.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2"
+  }
+}
