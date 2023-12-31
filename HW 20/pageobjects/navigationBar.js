@@ -1,13 +1,7 @@
-import { Base } from "../helpers/base.js";
-
-
-class NavigationBar extends Base {
-    constructor() {
-        super()
-    }
+class NavigationBar {
 
     get 'Navigate Bar'() {
-        return $('//*[@class="navbar__link"]');
+        return '//*[@class="navbar__link"]';
     }
 
     get 'Ukrainian Language Switch Button'() {

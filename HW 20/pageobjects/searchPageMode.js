@@ -1,10 +1,4 @@
-import { Base } from "../helpers/base.js";
-
-
-class SearchPageMode extends Base {
-    constructor() {
-        super()
-    }
+class SearchPageMode {
 
     get 'Search Input'() {
         return '//*[@class="DocSearch-Input"]';
@@ -16,14 +10,6 @@ class SearchPageMode extends Base {
 
     get 'See All Results Button'() {
         return '//*[@class="DocSearch-HitsFooter"]/*';
-    }
-
-    async searchDoc(button, element, text) {
-        await button.waitForClickable();
-        await button.click();
-        await element.waitForClickable();
-        await element.click();
-        await element.setValue(text);
     }
 }
 

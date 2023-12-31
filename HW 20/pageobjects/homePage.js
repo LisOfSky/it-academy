@@ -1,6 +1,4 @@
 class HomePage {
-    constructor() {
-    }
 
     get 'VueJS Logo'() {
         return '//*[@src="/img/icons/vue.png"]';

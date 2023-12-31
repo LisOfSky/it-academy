@@ -1,6 +1,7 @@
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv;
+const CucumberHtmlReporter = require("cucumber-html-reporter");
 
 exports.config = {
     //
@@ -141,14 +142,15 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['cucumberjs-json',
-        [ 'cucumberjs-json',
-            {
-                jsonFolder: '.tmp/new/',
-                language: 'en',
-            },
-        ],
-    ],
+    reporters: ["spec"],
+    // reporters: ['cucumberjs-json',
+    //     [ 'cucumberjs-json',
+    //         {
+    //             jsonFolder: '.tmp/new/',
+    //             language: 'en',
+    //         },
+    //     ],
+    // ],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
@@ -173,7 +175,8 @@ exports.config = {
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
-        ignoreUndefinedDefinitions: false
+        ignoreUndefinedDefinitions: false,
+        format: ["json:./reports/json/cucumber_report.json"]
     },
 
     //
@@ -331,8 +334,18 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: function (exitCode, config, capabilities, results) {
+        const options = {
+            theme: "bootstrap",
+            jsonFile: "./reports/json/cucumber_report.json",
+            output: "./reports/html/cucumber_report.html",
+            reportSuiteAsScenarios: true,
+            scenarioTimestamp: true,
+            launchReport: true,
+        };
+
+        CucumberHtmlReporter.generate(options);
+    },
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session
