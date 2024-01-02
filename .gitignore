@@ -4,11 +4,13 @@
 *coverage
 *jest.config.js
 *mochawesome-report
+.DS_Store
 *allure-report
 *allure-results
-*.eslintrc.js
 /.idea
 */test-results/
 */playwright-report/
 */blob-report/
 */playwright/.cache/
+.tmp/
+*reports/

@@ -7,6 +7,10 @@ class Base {
         await this.page.goto(url);
     }
 
+    async scrollPage(){
+        await this.page.mouse.wheel(0, 600);
+    }
+
     async click(element){
         await element.click();
     }

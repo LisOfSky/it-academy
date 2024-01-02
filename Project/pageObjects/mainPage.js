@@ -5,13 +5,16 @@ class MainPage extends Base {
         super(page);
     }
 
-    get getStartedButton() {
-        return this.page.locator('//*[@class="getStarted_Sjon"]');
+    get agreeCookiesButton() {
+        return this.page.locator('//*[text()="Принять"]');
     }
 
-    async searchDoc(button, element, text) {
-        await button.click();
-        await element.fill(text);
+    get popularProductsSlider() {
+        return this.page.locator('//*[contains(@class, "swiper-slide _item_1i13w_48 swiper-slide-visible")]');
+    }
+
+    get brandLacosteIcon() {
+        return this.page.locator('//*[contains(@href, "brand-lacoste")]/*');
     }
 }
 
