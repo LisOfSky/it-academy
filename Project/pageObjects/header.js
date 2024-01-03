@@ -33,6 +33,14 @@ class Header extends Base {
         return this.page.locator('//*[text()=" Sale%"]');
     }
 
+    get shoppingCartButton() {
+        return this.page.locator('//*[@class="_count_1kpa7_11"]');
+    }
+
+    get signinButton() {
+        return this.page.locator('//*[text()="Войти"]');
+    }
+
     async searchProduct(text) {
         await this.searchField.fill(text);
         await this.click(this.searchButton);
