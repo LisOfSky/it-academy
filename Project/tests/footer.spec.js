@@ -20,7 +20,7 @@ test.describe('lamoda.by - Footer tests', () => {
 
     test('The text of the consent to data processing should be red color after pressing button "Подписаться" without enabled checkbox', async ({page}) => {
         await base.click(footer.subscribeButton);
-        await expect(footer.consentTextToDataProcessing).toHaveCSS('color', 'rgb(194, 0, 0)');
+        await expect(footer.consentToDataProcessingCheckbox).toHaveCSS('color', 'rgb(194, 0, 0)');
     });
 
     test('List of brands should contain 74 brands', async ({page}) => {

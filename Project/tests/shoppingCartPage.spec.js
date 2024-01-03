@@ -34,8 +34,8 @@ test.describe('lamoda.by - Shopping Cart Page tests', () => {
         await base.click(productPage.firstProductInList);
         await base.click(productPage.addToCartButton);
         await base.click(shoppingCartPage.goToCartButton);
-        await base.hoverOn(shoppingCartPage.productCartBlock);
-        await base.click(shoppingCartPage.deleteProductFromCart);
+        await base.hoverOn(shoppingCartPage.blockOfProductCart);
+        await base.click(shoppingCartPage.deleteProductFromCartButton);
         await expect(shoppingCartPage.deleteMassage).toHaveText('В корзине нет товаров');
     });
 

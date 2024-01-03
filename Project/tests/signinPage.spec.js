@@ -14,18 +14,22 @@ test.describe('lamoda.by - Signin Page tests', () => {
         signinPage = new SigninPage(page);
 
         await base.navigate('https://www.lamoda.by');
+        await base.click(header.signinButton);
     });
 
     test('Signin with incorrect email should show the message "Пожалуйста, проверьте, правильно ли указан адрес"', async ({page}) => {
-        await base.click(header.signinButton);
-        await signinPage.loginFieldForInput.fill('gmail.com');
+        await signinPage.loginField.fill('gmail.com');
         await signinPage.confirmEnteredData();
         await expect(signinPage.loginValidationMassage).toHaveText('Пожалуйста, проверьте, правильно ли указан адрес');
     });
 
     test('After pressed to "Я не помню пароль" button should see "Восстановление пароля" block', async ({page}) => {
-        await base.click(header.signinButton);
         await base.click(signinPage.passwordRecoveryButton);
         await expect(signinPage.passwordRecoveryBlock).toBeEnabled();
+    });
+
+    test('Social media list should contain 4 socials', async ({page}) => {
+        await base.hoverOn(signinPage.loginViaSocialMediaButton);
+        await expect(signinPage.socialMediaList).toHaveCount(4);
     });
 })

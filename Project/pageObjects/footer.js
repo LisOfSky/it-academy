@@ -13,7 +13,7 @@ class Footer extends Base {
         return this.page.locator('//*[text()="Заполните электронную почту"]');
     }
 
-    get consentTextToDataProcessing() {
+    get consentToDataProcessingCheckbox() {
         return this.page.locator('//*[@class="x-checkbox__content"]');
     }
 

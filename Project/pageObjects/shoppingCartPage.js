@@ -13,11 +13,11 @@ class ShoppingCartPage extends Base {
         return this.page.locator('//*[@class="d-modal__bottom"]/*[@href="/checkout/cart/"]');
     }
 
-    get productCartBlock() {
+    get blockOfProductCart() {
         return this.page.locator('//*[@class="_desktopWrapper_t2t70_27"]');
     }
 
-    get deleteProductFromCart() {
+    get deleteProductFromCartButton() {
         return this.page.locator('//*[text()="Удалить"]');
     }
 

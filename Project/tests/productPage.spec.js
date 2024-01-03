@@ -17,55 +17,30 @@ test.describe('lamoda.by - Product Page tests', () => {
         mainPage = new MainPage(page);
 
         await base.navigate('https://www.lamoda.by');
-        //await base.click(mainPage.agreeCookiesButton);
     });
 
     test('Product name from products list should be matches name in product card', async ({page}) => {
         await header.searchProduct('new balance 574');
-        const productName = await productPage.firstProductName.innerText();
+        const productName = await productPage.firstProductNameInList.innerText();
         await base.click(productPage.firstProductInList);
         await expect(productPage.productName).toHaveText(productName);
     });
 
     test('Old full product price should be crossed out for promotional product', async ({page}) => {
         await base.click(header.saleButton);
-        //await base.scrollPage();
         await base.click(productPage.firstProductInList);
-        //await base.hoverOn(productPage.firstProductInList);
-        //await page.waitForTimeout(5000);
-        //await base.click(productPage.productDetailButton);
         await expect(productPage.productPrice).toHaveCSS('text-decoration', 'line-through solid rgb(0, 0, 0)');
     });
 
     test('New product price should be red for promotional product', async ({page}) => {
         await base.click(header.saleButton);
-        //await base.scrollPage();
         await base.click(productPage.firstProductInList);
         await expect(productPage.newProductPrice).toHaveCSS('color', 'rgb(249, 60, 0)');
     });
 
-    test.skip('New price should be lower than old', async ({page}) => {
-        await base.click(header.saleButton);
-        await base.scrollPage();
-        await base.click(productPage.firstProductInList);
-        //await base.hoverOn(productPage.firstProductInList);
-        //await page.waitForTimeout(3000);
-        //await base.click(productPage.productDetailButton);
-        await page.waitForTimeout(3000);
-        const oldPrice = Number(await productPage.productPrice.innerText());
-        //const oldPrice = productPage.convertPriceToNum(productPage.productPrice);
-        const newPrice = Number((await productPage.newProductPrice.innerText()).slice(0, -3));
-        console.log(newPrice, oldPrice)
-        await expect(oldPrice).toBeGreaterThan(newPrice);
-    });
-
     test('Promotional product should has a discount label', async ({page}) => {
         await base.click(header.saleButton);
-        //await base.scrollPage();
         await base.click(productPage.firstProductInList);
-        //await base.hoverOn(productPage.firstProductInList);
-        //await page.waitForTimeout(5000);
-        //await base.click(productPage.productDetailButton);
         await expect(productPage.productDiscount).toBeEnabled();
     });
 

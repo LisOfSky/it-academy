@@ -5,10 +5,6 @@ class MainPage extends Base {
         super(page);
     }
 
-    get agreeCookiesButton() {
-        return this.page.locator('//*[text()="Принять"]');
-    }
-
     get popularProductsSlider() {
         return this.page.locator('//*[contains(@class, "swiper-slide _item_1i13w_48 swiper-slide-visible")]');
     }

@@ -5,24 +5,12 @@ class SigninPage extends Base {
         super(page);
     }
 
-    get loginFieldForClick() {
-        return this.page.locator('//*[@class="input-material__placeholder input-material__placeholder"]');
-    }
-
-    get loginFieldForInput() {
+    get loginField() {
         return this.page.locator('//*[@class="input-material__input-user-agent input-material__input"]');
-    }
-
-    get passwordField() {
-        return this.page.locator('//*[text()="Введите пароль"]/..');
     }
 
     get loginValidationMassage() {
         return this.page.locator('//*[@class="input-material__validation-message"]');
-    }
-
-    get loginButton() {
-        return this.page.locator('//*[@aria-label="Войти"]');
     }
 
     get passwordRecoveryButton() {
@@ -31,6 +19,14 @@ class SigninPage extends Base {
 
     get passwordRecoveryBlock() {
         return this.page.locator('//*[text()="Восстановление пароля"]');
+    }
+
+    get loginViaSocialMediaButton() {
+        return this.page.locator('//*[text()="соцсети "]');
+    }
+
+    get socialMediaList() {
+        return this.page.locator('//*[@class="_row_12oac_6"]/span');
     }
 
     async confirmEnteredData() {
