@@ -40,7 +40,7 @@ describe(`lamoda search-api testing`, function() {
             }
         });
 
-        test(`should return 400 with invalid ID`, async () => {
+        test(`should return 400 with empty query`, async () => {
             expect(response.response.status).toEqual(400);
         });
 
