@@ -6,7 +6,7 @@ class MainPage extends Base {
     }
 
     get popularProductsSlider() {
-        return this.page.locator('//*[contains(@class, "swiper-slide _item_1i13w_48 swiper-slide-visible")]');
+        return this.page.locator('//*[contains(@class, "swiper-slide _item_10bum_48 swiper-slide-visible")]');
     }
 
     get brandLacosteIcon() {

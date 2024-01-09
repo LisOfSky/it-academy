@@ -28,11 +28,6 @@ class SigninPage extends Base {
     get socialMediaList() {
         return this.page.locator('//*[@class="_row_12oac_6"]/span');
     }
-
-    async confirmEnteredData() {
-        await this.page.keyboard.press('Backspace');
-        await this.page.keyboard.press('Tab');
-    }
 }
 
 module.exports = SigninPage;

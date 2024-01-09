@@ -14,7 +14,7 @@ class ShoppingCartPage extends Base {
     }
 
     get blockOfProductCart() {
-        return this.page.locator('//*[@class="_desktopWrapper_t2t70_27"]');
+        return this.page.locator('//*[@class="preloader preloader_3 preloader_scrollable preloader_wrapper"]');
     }
 
     get deleteProductFromCartButton() {
@@ -26,7 +26,7 @@ class ShoppingCartPage extends Base {
     }
 
     get promocodesSelectButton() {
-        return this.page.locator('//*[@class="_root_wf5oq_12 _promocodesAndCertificates_nc3qp_121"]');
+        return this.page.locator('//*[@class="_root_wf5oq_12 _promocodesAndCertificates_1qj7m_121"]');
     }
 
     get promocodesField() {

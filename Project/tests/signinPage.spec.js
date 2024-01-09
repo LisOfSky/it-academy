@@ -18,8 +18,7 @@ test.describe('lamoda.by - Signin Page tests', () => {
     });
 
     test('Signin with incorrect email should show the message "Пожалуйста, проверьте, правильно ли указан адрес"', async ({page}) => {
-        await signinPage.loginField.fill('gmail.com');
-        await signinPage.confirmEnteredData();
+        await base.fillAndConfirmEnteredText(signinPage.loginField, 'gmail.com');
         await expect(signinPage.loginValidationMassage).toHaveText('Пожалуйста, проверьте, правильно ли указан адрес');
     });
 
