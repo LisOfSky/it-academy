@@ -40,6 +40,17 @@ class ShoppingCartPage extends Base {
     get incorrectPromocodeMassage() {
         return this.page.locator('//*[@class="_error_1k8kq_13"]');
     }
+
+    async pressButtonOnBlockOfProduct (button) {
+        await this.blockOfProductCart.hover();
+        await button.click();
+    }
+
+    async usePromocodes (promocodes) {
+        await this.promocodesSelectButton.click();
+        await this.promocodesField.fill(promocodes);
+        await this.confirmPromocodButton.click();
+    }
 }
 
 module.exports = ShoppingCartPage;

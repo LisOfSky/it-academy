@@ -36,6 +36,16 @@ class ProductPage extends Base {
     get addToCartButton() {
         return this.page.locator('//*[@aria-label="Добавить в корзину"]');
     }
+
+    async chooseFirstProductOnProductCategory (category) {
+        await category.click();
+        await this.firstProductInList.click();
+    }
+
+    async addToCartFirstProductInList () {
+        await this.firstProductInList.click();
+        await this.addToCartButton.click();
+    }
 }
 
 module.exports = ProductPage;

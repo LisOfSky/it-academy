@@ -27,20 +27,17 @@ test.describe('lamoda.by - Product Page tests', () => {
     });
 
     test('Old full product price should be crossed out for promotional product', async ({page}) => {
-        await mainPage.click(header.saleButton);
-        await productPage.click(productPage.firstProductInList);
+        await productPage.chooseFirstProductOnProductCategory(header.saleButton);
         await expect(productPage.productPrice).toHaveCSS('text-decoration', 'line-through solid rgb(0, 0, 0)');
     });
 
     test('New product price should be red for promotional product', async ({page}) => {
-        await mainPage.click(header.saleButton);
-        await productPage.click(productPage.firstProductInList);
+        await productPage.chooseFirstProductOnProductCategory(header.saleButton);
         await expect(productPage.newProductPrice).toHaveCSS('color', 'rgb(249, 60, 0)');
     });
 
     test('Promotional product should has a discount label', async ({page}) => {
-        await mainPage.click(header.saleButton);
-        await productPage.click(productPage.firstProductInList);
+        await productPage.chooseFirstProductOnProductCategory(header.saleButton);
         await expect(productPage.productDiscount).toBeEnabled();
     });
 

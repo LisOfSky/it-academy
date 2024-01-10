@@ -24,29 +24,23 @@ test.describe('lamoda.by - Shopping Cart Page tests', () => {
 
     test('User should see massage "Товар добавлен в корзину" after added product to cart', async ({page}) => {
         await header.searchProduct('рюкзак');
-        await productPage.click(productPage.firstProductInList);
-        await productPage.click(productPage.addToCartButton);
+        await productPage.addToCartFirstProductInList();
         await expect(shoppingCartPage.productAddedToCartMassage).toBeEnabled();
     });
 
     test('After deleted product from cart user should see massage "В корзине нет товаров"', async ({page}) => {
         await header.searchProduct('Портфель');
-        await productPage.click(productPage.firstProductInList);
-        await productPage.click(productPage.addToCartButton);
+        await productPage.addToCartFirstProductInList();
         await shoppingCartPage.click(shoppingCartPage.goToCartButton);
-        await shoppingCartPage.hoverOn(shoppingCartPage.blockOfProductCart);
-        await shoppingCartPage.click(shoppingCartPage.deleteProductFromCartButton);
+        await shoppingCartPage.pressButtonOnBlockOfProduct(shoppingCartPage.deleteProductFromCartButton);
         await expect(shoppingCartPage.deleteMassage).toHaveText('В корзине нет товаров');
     });
 
     test('After using promocode with spaces should see massage "Код купона содержит недопустимые символы"', async ({page}) => {
         await header.searchProduct('Портфель');
-        await productPage.click(productPage.firstProductInList);
-        await productPage.click(productPage.addToCartButton);
+        await productPage.addToCartFirstProductInList();
         await shoppingCartPage.click(shoppingCartPage.goToCartButton);
-        await shoppingCartPage.click(shoppingCartPage.promocodesSelectButton);
-        await shoppingCartPage.promocodesField.fill('Happy new year');
-        await shoppingCartPage.click(shoppingCartPage.confirmPromocodButton);
+        await shoppingCartPage.usePromocodes('Happy new year');
         await expect(shoppingCartPage.incorrectPromocodeMassage).toHaveText('Код купона содержит недопустимые символы');
     });
 
