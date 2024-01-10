@@ -2,16 +2,19 @@ const {test, expect} = require("@playwright/test");
 const Base = require('../helpers/base');
 const Header = require('../pageObjects/header');
 const BrandPage = require('../pageObjects/brandPage');
+const MainPage = require('../pageObjects/mainPage');
 
 
 test.describe('lamoda.by - Header tests', () => {
     let base;
     let header;
     let brandPage;
+    let mainPage;
     test.beforeEach(async ({page}) => {
         base = new Base(page);
         header = new Header(page);
         brandPage = new BrandPage(page);
+        mainPage = new MainPage(page);
 
         await base.navigate('https://www.lamoda.by');
     });
@@ -21,7 +24,7 @@ test.describe('lamoda.by - Header tests', () => {
     });
 
     test('Lamoda header should include "Бесконтактная доставка!" popup', async ({page}) => {
-        await base.hoverOn(header.contactlessDeliveryButton);
+        await mainPage.hoverOn(header.contactlessDeliveryButton);
         await expect(header.contactlessDeliveryPopup).toContainText('Воспользуйся бесконтактной доставкой и оплачивайте покупки онлайн с Apple Pay и Google Pay');
     });
 

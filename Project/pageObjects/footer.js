@@ -17,12 +17,12 @@ class Footer extends Base {
         return this.page.locator('//*[@class="x-checkbox__content"]');
     }
 
-    get brandsFooterButton() {
-        return this.page.locator('//*[@class="x-footer-seo-menu-tabs"]/*[text()="Бренды"]');
+    get primeBrandsFooterButton() {
+        return this.page.locator('//*[@class="x-footer-seo-menu-tabs"]/*[text()="Премиум бренды"]');
     }
 
-    get brandsFooterList() {
-        return this.page.locator('//*[text()="Бренды"]/following::div[1]/*[@class="x-footer-seo-menu-tab-category-brands"]/following::div[1]/*');
+    get gucciFooterButton() {
+        return this.page.locator('//*[@class="x-footer-seo-menu-tab-links"]//*[text()="Gucci"]');
     }
 }
 

@@ -14,7 +14,7 @@ test.describe('lamoda.by - Main Page tests', () => {
         brandPage = new BrandPage(page);
 
         await base.navigate('https://www.lamoda.by');
-        await base.scrollPage();
+        await mainPage.scrollPage();
     });
 
     test('Slider "Популярное" should contain 6 visible products', async ({page}) => {
@@ -22,7 +22,7 @@ test.describe('lamoda.by - Main Page tests', () => {
     });
 
     test('Lacoste icon should leads to the Lacoste brand page', async ({page}) => {
-        await base.click(mainPage.brandLacosteIcon);
+        await mainPage.click(mainPage.brandLacosteIcon);
         await expect(brandPage.pageTitle).toHaveText('Lacoste');
     });
 })

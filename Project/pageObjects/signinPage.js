@@ -25,8 +25,14 @@ class SigninPage extends Base {
         return this.page.locator('//*[text()="соцсети "]');
     }
 
-    get socialMediaList() {
-        return this.page.locator('//*[@class="_row_12oac_6"]/span');
+    get appleAuthorizationButton() {
+        return this.page.locator('//*[@class="_item_12oac_14 _item_apple_12oac_24"]');
+    }
+
+    async fillAndConfirmEnteredText(element, text) {
+        await element.fill(text);
+        await this.page.keyboard.press('Backspace');
+        await this.page.keyboard.press('Tab');
     }
 }
 
