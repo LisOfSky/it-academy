@@ -1,17 +1,17 @@
 const {test, expect} = require("@playwright/test");
 const Base = require('../helpers/base');
 const MainPage = require('../pageObjects/mainPage');
-const BrandPage = require('../pageObjects/brandPage');
+const ProductsListPage = require('../pageObjects/productsListPage');
 
 
 test.describe('lamoda.by - Main Page tests', () => {
     let base;
     let mainPage;
-    let brandPage;
+    let productsListPage;
     test.beforeEach(async ({page}) => {
         base = new Base(page);
         mainPage = new MainPage(page);
-        brandPage = new BrandPage(page);
+        productsListPage = new ProductsListPage(page);
 
         await base.navigate('https://www.lamoda.by');
         await mainPage.scrollPage();
@@ -23,6 +23,6 @@ test.describe('lamoda.by - Main Page tests', () => {
 
     test('Lacoste icon should leads to the Lacoste brand page', async ({page}) => {
         await mainPage.click(mainPage.brandLacosteIcon);
-        await expect(brandPage.pageTitle).toHaveText('Lacoste');
+        await expect(productsListPage.pageTitle).toHaveText('Lacoste');
     });
 })

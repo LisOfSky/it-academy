@@ -1,19 +1,19 @@
 const {test, expect} = require("@playwright/test");
 const Base = require('../helpers/base');
 const Header = require('../pageObjects/header');
-const BrandPage = require('../pageObjects/brandPage');
+const ProductsListPage = require('../pageObjects/productsListPage');
 const MainPage = require('../pageObjects/mainPage');
 
 
 test.describe('lamoda.by - Header tests', () => {
     let base;
     let header;
-    let brandPage;
+    let productsListPage;
     let mainPage;
     test.beforeEach(async ({page}) => {
         base = new Base(page);
         header = new Header(page);
-        brandPage = new BrandPage(page);
+        productsListPage = new ProductsListPage(page);
         mainPage = new MainPage(page);
 
         await base.navigate('https://www.lamoda.by');
@@ -35,6 +35,6 @@ test.describe('lamoda.by - Header tests', () => {
     test('Search by "Adidas" should leads to the Adidas brand page', async ({page}) => {
         const brandName = 'adidas';
         await header.searchProduct(brandName);
-        await expect(brandPage.pageTitle).toHaveText(brandName);
+        await expect(productsListPage.pageTitle).toHaveText(brandName);
     });
 })

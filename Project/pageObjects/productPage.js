@@ -5,14 +5,6 @@ class ProductPage extends Base {
         super(page);
     }
 
-    get firstProductInList() {
-        return this.page.locator('//*[@class="grid__catalog"]/div[1]//*[@class="x-product-card__link x-product-card__hit-area"]');
-    }
-
-    get firstProductNameInList() {
-        return this.page.locator('//*[@class="grid__catalog"]/div[1]//*[@class="x-product-card-description__microdata-wrap"]/div[2]');
-    }
-
     get productName() {
         return this.page.locator('//*[@class="_modelName_1lw0e_21"]');
     }
@@ -31,20 +23,6 @@ class ProductPage extends Base {
 
     get productDescription() {
         return this.page.locator('//*[@class="_root_1ga1h_2"]/div/div[2]');
-    }
-
-    get addToCartButton() {
-        return this.page.locator('//*[@aria-label="Добавить в корзину"]');
-    }
-
-    async chooseFirstProductOnProductCategory (category) {
-        await category.click();
-        await this.firstProductInList.click();
-    }
-
-    async addToCartFirstProductInList () {
-        await this.firstProductInList.click();
-        await this.addToCartButton.click();
     }
 }
 
