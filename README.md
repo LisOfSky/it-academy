@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Artsiom Lisouski</h1>
-<h3 align="center">A passionate QA engineer from Belarus</h3>
+<h3 align="center">A passionate automation QA engineer</h3>
 
-- 🔭 I'm currently studying in an automated JavaScript testing course (powered by EPAM) [https://www.it-academy.by/course/avtomatizirovannoe-testirovanie-na-javascript/avtomatizirovannoe-testirovanie-na-javascript-powered-by-epam/](https://www.it-academy.by/course/avtomatizirovannoe-testirovanie-na-javascript/avtomatizirovannoe-testirovanie-na-javascript-powered-by-epam/)
+- 🔭 This repository contains the results of my work on completing the automated JavaScript testing course (powered by EPAM) [https://www.it-academy.by/course/avtomatizirovannoe-testirovanie-na-javascript/avtomatizirovannoe-testirovanie-na-javascript-powered-by-epam/](https://www.it-academy.by/course/avtomatizirovannoe-testirovanie-na-javascript/avtomatizirovannoe-testirovanie-na-javascript-powered-by-epam/)
 
 - 📫 How to reach me **artem.lisovsky@gmail.com**
 
